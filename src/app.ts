@@ -2,6 +2,8 @@ import express, { Request, Response, NextFunction } from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import router from './routes/main';
+import NotFound from './middlewares/NotFound';
+import globalErrorHandler from './middlewares/globalErrorHandler';
 
 const app = express();
 app.use(express.json());
@@ -17,12 +19,12 @@ const test = async (req: Request, res: Response) => {
 app.get('/', test);
 
 //application routes
-app.use('/api/v1', router);
+app.use('/api', router);
 
 //gloabal err handler
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 //Not Found Route
-// app.use(NotFound);
+app.use(NotFound);
 
 export default app;
