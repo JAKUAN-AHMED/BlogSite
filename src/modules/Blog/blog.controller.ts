@@ -47,20 +47,22 @@ const updateBlog=catchAsync(async(req,res)=>{
 });
 
 
-const deleteBlog=catchAsync(async(req,res)=>{
-    const {id}=req.params;
-    try{
-        await
-        BlogModel.findByIdAndDelete(id);
-        res.status(204).json({
-            success:true,
-            message:'Blog deleted successfully',
-            statusCode:200,
-        });
-    }catch(err:any){    
-        throw new AppError(false, 400, "Erro deleting blog",err.message);
+const deleteBlog = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  try {
+    const blog = await BlogModel.findByIdAndDelete(id);
+    if (!blog) {
+      throw new AppError(false, 404, 'Blog not found');
     }
-})
+    res.status(200).json({
+      success: true,
+      message: 'Blog deleted successfully',
+      statusCode: 200,
+    });
+  } catch (err: any) {
+    throw new AppError(false, 400, 'Erro deleting blog', err.message);
+  }
+});
 
 
 const getAllBlogs=catchAsync(async(req,res)=>{
