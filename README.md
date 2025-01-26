@@ -42,7 +42,7 @@ Watch the walkthrough of this project, showcasing its core features and function
 - **Database**: MongoDB with Mongoose  
 - **Validation**: Zod  
 - **Linting and Formatting**: ESLint and Prettier  
-- **Deployment**: Render  
+- **Deployment**: Vercel 
 
 ---
 
@@ -95,40 +95,15 @@ Block User: PATCH /api/admin/users/:userId/block
 Delete Blog: DELETE /api/admin/blogs/:id
 Setup Instructions
 Clone the repository:
-bash
-Copy
-Edit
+
 git clone <repository-url>
 cd <repository-folder>
 Install dependencies:
-bash
-Copy
-Edit
+
 npm install
-Configure environment variables: Create a .env file in the root directory with the following:
-env
-Copy
-Edit
-PORT=5000
-MONGO_URI=<your-mongodb-uri>
-JWT_SECRET=<your-jwt-secret>
-Run the project:
-Development mode:
-bash
-Copy
-Edit
-npm run start:dev
-Production mode:
-bash
-Copy
-Edit
-npm run build
-npm run start:prod
-Deployment
-Deploy the server to platforms like Render, Vercel, or AWS.
-Provide the live URL in the submission.
+
 Admin Credentials (for testing)
-Email: admin@example.com
-Password: adminpassword
+Email: admin@gmail.com
+Password: admin123
 Author
 Developed as part of Assignment-3 for the Blog Platform backend. This project follows clean coding practices and uses tools like TypeScript, Prettier, and ESLint to ensure high-quality code.
