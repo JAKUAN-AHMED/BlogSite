@@ -1,41 +1,40 @@
-# Blog Project: Assignment-3
+📝 Blog Project: Assignment-3
+Welcome to the Blog Project: Assignment-3, a backend application designed to provide a robust blogging platform with role-based access control, secure authentication, and advanced API features for blogs like search, sort, and filter.
 
-## Overview
-This project is a backend application for a blogging platform. It allows users to write, update, and delete their blogs while providing admins with special permissions to manage users and blogs. The system incorporates secure authentication, role-based access control, and public APIs for viewing blogs with advanced features like search, sort, and filter.
+📹 Project Video Review
+Watch the walkthrough of this project, showcasing its core features and functionality.
+👉 Watch Video Review(#) : Video
 
-## Features
-### User Roles
-- **Admin**:
-  - Created manually in the database with predefined credentials.
-  - Can delete any blog.
-  - Can block any user by updating the `isBlocked` property.
-  - Cannot update any blog.
-- **User**:
-  - Can register and log in.
-  - Can create, update, and delete their own blogs.
-  - Cannot perform admin actions.
-
-### Authentication & Authorization
-- **Authentication**:
-  - Users must log in to perform write, update, and delete operations.
-- **Authorization**:
-  - Differentiates between Admin and User roles to secure endpoints.
-
-### Blog API
-- Provides public access to blogs with:
-  - Title, content, author details, and timestamps.
-  - Search functionality for title and content.
-  - Sorting by fields like `createdAt` or `title`.
-  - Filtering by author ID.
-
-## Technologies Used
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB with Mongoose
-- **Programming Language**: TypeScript
-- **Code Quality**: Prettier, ESLint
-
-## Project Structure
-```plaintext
+📋 Features
+✨ User Roles
+Admin:
+Can delete any blog.
+Can block any user by updating the isBlocked property.
+Cannot update blogs.
+User:
+Can register, log in, create, update, and delete their own blogs.
+Cannot perform admin actions.
+🔐 Authentication & Authorization
+Authentication:
+Secure login required for all CRUD operations on blogs.
+Authorization:
+Role-based access to endpoints ensures secure actions.
+📰 Blog Features
+Public API access for blogs with:
+Search by title or content.
+Sorting by creation date or title.
+Filtering by author.
+🛠️ Technologies Used
+Backend Framework: Express.js
+Programming Language: TypeScript
+Database: MongoDB with Mongoose
+Validation: Zod
+Linting and Formatting: ESLint and Prettier
+Deployment: Render
+📂 Folder Structure
+plaintext
+Copy
+Edit
 src/
 ├── builder/
 ├── config/          # Database configuration
@@ -67,172 +66,55 @@ src/
 .eslint.config.mjs   # ESLint configuration
 package.json         # Dependencies and scripts
 package-lock.json    # Exact dependency versions
-```
-
-## API Endpoints
-### Authentication
-#### Register User
-**Endpoint**: `POST /api/auth/register`
-- **Request Body**:
-  ```json
-  {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "password": "securepassword"
-  }
-  ```
-- **Response**:
-  - Success (201):
-    ```json
-    {
-      "success": true,
-      "message": "User registered successfully",
-      "data": {
-        "_id": "string",
-        "name": "string",
-        "email": "string"
-      }
-    }
-    ```
-  - Failure (400): Validation errors.
-
-#### Login User
-**Endpoint**: `POST /api/auth/login`
-- **Request Body**:
-  ```json
-  {
-    "email": "john@example.com",
-    "password": "securepassword"
-  }
-  ```
-- **Response**:
-  - Success (200):
-    ```json
-    {
-      "success": true,
-      "message": "Login successful",
-      "data": {
-        "token": "string"
-      }
-    }
-    ```
-  - Failure (401): Invalid credentials.
-
-### Blog Management
-#### Create Blog
-**Endpoint**: `POST /api/blogs`
-- **Authorization**: `Bearer <token>`
-- **Request Body**:
-  ```json
-  {
-    "title": "My First Blog",
-    "content": "This is the content of my blog."
-  }
-  ```
-- **Response**:
-  - Success (201):
-    ```json
-    {
-      "success": true,
-      "message": "Blog created successfully",
-      "data": {
-        "_id": "string",
-        "title": "string",
-        "content": "string",
-        "author": { "details" }
-      }
-    }
-    ```
-
-#### Get All Blogs
-**Endpoint**: `GET /api/blogs`
-- **Query Parameters**:
-  - `search`: Search by title or content.
-  - `sortBy`: Sort blogs by fields like `createdAt` or `title`.
-  - `sortOrder`: Sort order (`asc` or `desc`).
-  - `filter`: Filter by author ID.
-- **Response**:
-  ```json
-  {
-    "success": true,
-    "message": "Blogs fetched successfully",
-    "data": [
-      {
-        "_id": "string",
-        "title": "string",
-        "content": "string",
-        "author": { "details" }
-      }
-    ]
-  }
-  ```
-
-### Admin Actions
-#### Block User
-**Endpoint**: `PATCH /api/admin/users/:userId/block`
-- **Authorization**: `Bearer <admin_token>`
-- **Response**:
-  - Success (200):
-    ```json
-    {
-      "success": true,
-      "message": "User blocked successfully",
-      "data": {
-        "_id": "string",
-        "isBlocked": true
-      }
-    }
-    ```
-
-#### Delete Blog
-**Endpoint**: `DELETE /api/admin/blogs/:id`
-- **Authorization**: `Bearer <admin_token>`
-- **Response**:
-  - Success (200):
-    ```json
-    {
-      "success": true,
-      "message": "Blog deleted successfully"
-    }
-    ```
-
-## Setup Instructions
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd <repository-folder>
-   ```
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-3. **Configure environment variables**:
-   Create a `.env` file in the root directory with the following:
-   ```env
-   PORT=5000
-   MONGO_URI=<your-mongodb-uri>
-   JWT_SECRET=<your-jwt-secret>
-   ```
-4. **Run the project**:
-   - Development mode:
-     ```bash
-     npm run start:dev
-     ```
-   - Production mode:
-     ```bash
-     npm run build
-     npm run start:prod
-     ```
-
-## Deployment
-1. Deploy the server to platforms like **Render**, **Vercel**, or **AWS**.
-2. Provide the live URL in the submission.
-
-## Admin Credentials (for testing)
-- **Email**: `admin@example.com`
-- **Password**: `adminpassword`
-
-## Author
+📡 API Endpoints
+🔐 Authentication
+Register User: POST /api/auth/register
+Login User: POST /api/auth/login
+📰 Blog Management
+Create Blog: POST /api/blogs
+Get All Blogs: GET /api/blogs
+Get Single Blog: GET /api/blogs/:blogId
+Update Blog: PUT /api/blogs/:blogId
+Delete Blog: DELETE /api/blogs/:blogId
+🔨 Admin Actions
+Block User: PATCH /api/admin/users/:userId/block
+Delete Blog: DELETE /api/admin/blogs/:id
+Setup Instructions
+Clone the repository:
+bash
+Copy
+Edit
+git clone <repository-url>
+cd <repository-folder>
+Install dependencies:
+bash
+Copy
+Edit
+npm install
+Configure environment variables: Create a .env file in the root directory with the following:
+env
+Copy
+Edit
+PORT=5000
+MONGO_URI=<your-mongodb-uri>
+JWT_SECRET=<your-jwt-secret>
+Run the project:
+Development mode:
+bash
+Copy
+Edit
+npm run start:dev
+Production mode:
+bash
+Copy
+Edit
+npm run build
+npm run start:prod
+Deployment
+Deploy the server to platforms like Render, Vercel, or AWS.
+Provide the live URL in the submission.
+Admin Credentials (for testing)
+Email: admin@example.com
+Password: adminpassword
+Author
 Developed as part of Assignment-3 for the Blog Platform backend. This project follows clean coding practices and uses tools like TypeScript, Prettier, and ESLint to ensure high-quality code.
-
----
