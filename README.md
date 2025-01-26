@@ -1,40 +1,54 @@
-📝 Blog Project: Assignment-3
-Welcome to the Blog Project: Assignment-3, a backend application designed to provide a robust blogging platform with role-based access control, secure authentication, and advanced API features for blogs like search, sort, and filter.
+# 📝 Blog Project: Assignment-3  
 
-📹 Project Video Review
-Watch the walkthrough of this project, showcasing its core features and functionality.
-👉 Watch Video Review(#) : Video
+Welcome to the **Blog Project: Assignment-3**, a backend application designed to provide a robust blogging platform with role-based access control, secure authentication, and advanced API features for blogs like search, sort, and filter.
 
-📋 Features
-✨ User Roles
-Admin:
-Can delete any blog.
-Can block any user by updating the isBlocked property.
-Cannot update blogs.
-User:
-Can register, log in, create, update, and delete their own blogs.
-Cannot perform admin actions.
-🔐 Authentication & Authorization
-Authentication:
-Secure login required for all CRUD operations on blogs.
-Authorization:
-Role-based access to endpoints ensures secure actions.
-📰 Blog Features
-Public API access for blogs with:
-Search by title or content.
-Sorting by creation date or title.
-Filtering by author.
-🛠️ Technologies Used
-Backend Framework: Express.js
-Programming Language: TypeScript
-Database: MongoDB with Mongoose
-Validation: Zod
-Linting and Formatting: ESLint and Prettier
-Deployment: Render
-📂 Folder Structure
-plaintext
-Copy
-Edit
+---
+
+## 📹 **Project Video Review**  
+Watch the walkthrough of this project, showcasing its core features and functionality.  
+👉 **Watch Video Review(#)** : [Video](https://drive.google.com/file/d/1vvLbQ63-IzECNGUfULKIPy7uKXD6pvdw/view?usp=drive_link)  
+
+---
+
+## 📋 **Features**
+
+### ✨ **User Roles**
+- **Admin**:
+  - Can delete any blog.
+  - Can block any user by updating the `isBlocked` property.
+  - Cannot update blogs.
+- **User**:
+  - Can register, log in, create, update, and delete their own blogs.
+  - Cannot perform admin actions.
+
+### 🔐 **Authentication & Authorization**
+- **Authentication**:
+  - Secure login required for all CRUD operations on blogs.
+- **Authorization**:
+  - Role-based access to endpoints ensures secure actions.
+
+### 📰 **Blog Features**
+- Public API access for blogs with:
+  - Search by title or content.
+  - Sorting by creation date or title.
+  - Filtering by author.
+
+---
+
+## 🛠️ **Technologies Used**
+
+- **Backend Framework**: Express.js  
+- **Programming Language**: TypeScript  
+- **Database**: MongoDB with Mongoose  
+- **Validation**: Zod  
+- **Linting and Formatting**: ESLint and Prettier  
+- **Deployment**: Render  
+
+---
+
+## 📂 **Folder Structure**
+
+```plaintext
 src/
 ├── builder/
 ├── config/          # Database configuration
