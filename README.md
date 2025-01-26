@@ -102,8 +102,5 @@ Install dependencies:
 
 npm install
 
-Admin Credentials (for testing)
-Email: admin@gmail.com
-Password: admin123
 Author
 Developed as part of Assignment-3 for the Blog Platform backend. This project follows clean coding practices and uses tools like TypeScript, Prettier, and ESLint to ensure high-quality code.
