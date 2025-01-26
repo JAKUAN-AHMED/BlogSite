@@ -5,6 +5,6 @@ import { Admincontrollers } from "./admin.controller";
 
 const router=Router ();
 
-router.patch('/users/:userId/block',authenticate,verifyAdmin,Admincontrollers.blockUser);
-router.delete('/blogs/:id',authenticate,verifyAdmin,Admincontrollers.deleteBlog);
+router.patch('/users/:userId/block',verifyAdmin,authenticate,Admincontrollers.blockUser);
+router.delete('/blogs/:id',verifyAdmin,authenticate,Admincontrollers.deleteBlog);
 export const AdminRoutes=router;
