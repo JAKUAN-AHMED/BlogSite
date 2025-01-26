@@ -6,7 +6,7 @@ Welcome to the **Blog Project: Assignment-3**, a backend application designed to
 
 ## 📹 **Project Video Review**  
 Watch the walkthrough of this project, showcasing its core features and functionality.  
-👉 **Watch Video Review(#)** : [Video](https://drive.google.com/file/d/1vvLbQ63-IzECNGUfULKIPy7uKXD6pvdw/view?usp=drive_link)  
+👉 **Watch Video Review(#)** : [Video](https://drive.google.com/file/d/1fAvsoAgdOR3HoEdUecsJpvVVJBb4TbFM/view?usp=drivesdk)  
 
 ---
 
