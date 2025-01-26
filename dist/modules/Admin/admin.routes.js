@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AdminRoutes = void 0;
+const verifyAdmin_1 = require("./../../middlewares/verifyAdmin");
+const express_1 = require("express");
+const auth_1 = require("../../middlewares/auth");
+const admin_controller_1 = require("./admin.controller");
+const router = (0, express_1.Router)();
+router.patch('/users/:userId/block', auth_1.authenticate, verifyAdmin_1.verifyAdmin, admin_controller_1.Admincontrollers.blockUser);
+router.delete('/blogs/:id', auth_1.authenticate, verifyAdmin_1.verifyAdmin, admin_controller_1.Admincontrollers.deleteBlog);
+exports.AdminRoutes = router;
